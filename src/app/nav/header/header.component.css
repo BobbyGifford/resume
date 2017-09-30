@@ -1,0 +1,13 @@
+.navbar-light{
+background-color: #e3f2fd;
+}
+
+:hover{
+    color: darkgrey;
+}
+
+.navbar-toggle, .icon-bar {
+    border:1px solid #5cb85c;
+}
+
+

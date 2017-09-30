@@ -1,0 +1,24 @@
+<div class="container-fluid">
+<h1 class="text-center">A Simple Quiz</h1>
+<div class="card-block" *ngFor="let item of questionList; let i = index">
+    <ul class="list-group text-center">
+        <li class="list-group-item" style="background-color: #e3f2fd;">
+        <app-question [question]="item"[id]="i"></app-question>
+        </li>
+    </ul>
+    </div>
+
+    <!--If the user achieves a perfect score a hidden message
+    and button appear which display their prize.-->
+
+    <!--Once the question list array reaches 0 the point counter disappears.-->
+    <div class="row text-center" *ngIf="perfectFinal">Your score is: {{pointCounter}}/{{perfectScore}}</div>
+    <div *ngIf="pointCounter==perfectScore">
+        <app-prize></app-prize>
+    </div>
+    
+    <div class="row text-center">
+    <button class="btn btn-warning btn-lg center-block" (click)="onRefresh()">Restart Quiz</button>
+    </div>
+
+</div>

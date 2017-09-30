@@ -1,0 +1,32 @@
+<!--Once the form is submitted the form disappears-->
+<div class="container-fluid">
+  <h1 class="text-center">Contact</h1>
+<form (ngSubmit)="onSubmit()" #form="ngForm" [hidden]="finished">
+
+<!--Here a selection field is displayed with the default 
+value "application", which is the first option-->
+<div class="form-group">
+    <label>Reason for visiting</label>
+    <select class="form-control" name="source" [ngModel]="'application'">
+      <option value="application">I am responding to an application I received.</option>
+      <option value="recruiter">I am a recruiter.</option>
+      <option value="random">I found this site on accident.</option>
+    </select>
+  </div>
+
+<!--Here is a text field which takes a users message.
+This field is optional-->
+  <div class="form-group">
+    <label>Any thoughts or opinions? Please contact me.</label>
+    <textarea class="form-control" rows="3" name="opinion" placeholder="Leave messages here."
+    ngModel></textarea>
+  </div>
+
+<!--The submit button is disabled unless the form is valid-->
+  <button class="btn btn-success" type="submit" [disabled]="!form.valid">Submit</button>
+</form>
+
+<!--Once the form is submitted and disappears,
+this message appears-->
+<h1 class="text-center" [hidden]="!finished">Thanks for your input!</h1>
+  </div>
